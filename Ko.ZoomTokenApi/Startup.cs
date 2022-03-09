@@ -31,7 +31,7 @@ namespace Ko.ZoomTokenApi
             services.Configure<ZoomCredentialsSettings>(Configuration.GetSection(nameof(ZoomCredentialsSettings)));
             services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
             {
-                builder.WithOrigins("https://localhost:8080").AllowAnyMethod().AllowAnyHeader();
+                builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
             }));
             services.AddControllers();
             services.AddSwaggerGen(c =>
